@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Фильтр низких частот</title>
+    <link rel="icon" href="/static/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Симулятор фильтра низких частот</h1>
+    
+    <div class="flex-container">
+    <div class="container">
+    <form id="signal-form" action="/filter" method="POST">
+
+        <div>
+            <label>Тип сигнала:</label>
+            <select name="signal_type" id="signal_type" class="select_form">
+                <option value="sine">Синусоидальный</option>
+                <option value="square">Квадратный</option>
+                <option value="triangle">Треугольный</option>
+            </select>
+        </div>
+        <div>
+            <p><span>Амплитуда</span></p>
+            <input type="number" placeholder="Амплитуда сигнала" name="amplitude" id="amplitude" step="0.01" class="input_form"><br>
+            <div class="slidecontainer">
+                <input type="range" min="10" max="1000" value="500" class="slider" id="myRange">
+            </div>
+        </div>
+        <div>
+            <p><span>Частота</span></p>
+            <input type="number" placeholder="Частота сигнала" name="frequency" id="frequency" step="0.01" class="input_form"><br>
+            <div class="slidecontainer">
+                <input type="range" min="10" max="1000" value="500" class="slider" id="myRange">
+            </div>
+        </div>
+        <div>
+            <p><span>Амплитуда шума</span></p>
+            <input type="number" placeholder="Амплитуда шума" name="noise_amplitude" id="noise_amplitude" step="0.01"class="input_form"><br>
+            <div class="slidecontainer">
+                <input type="range" min="10" max="1000" value="500" class="slider" id="myRange">
+            </div>
+        </div>
+        <div>
+            <p><span>Частота среза фильтра</span></p>
+            <input type="number" placeholder="Частота среза фильтра" name="cutoff_frequency" id="cutoff_frequency" step="0.01" class="input_form"><br>
+            <div class="slidecontainer">
+                <input type="range" min="10" max="1000" value="500" class="slider" id="myRange">
+            </div>
+        </div>
+        <div>
+            <p><span>Порядок фильтра</span></p>
+            <input type="number" placeholder="Порядок фильтра" name="filter_order" id="filter_order" step="1" class="input_form"><br>
+            <div class="slidecontainer">
+                <input type="range" min="10" max="1000" value="500" class="slider" id="myRange">
+            </div>
+        </div>
+
+        <input type="submit" value="Симулировать" class="input_button">
+        <input type="reset" value="Очистить форму" class="input_button">
+
+    </form>
+    </div>
+
+    <div class="container" id="charts">
+        <h3 class="canvas-header">Сигнал без фильтрации</h3>
+        <canvas id="signal-chart" width="400" height="200"></canvas>
+        <h3 class="canvas-header">Сигнал после фильтрации</h3>
+        <canvas id="filtered-signal-chart" width="400" height="200"></canvas>
+    </div>
+    </div>
+    <!-- Кнопка активации -->
+    <label class="btn" for="modal-1" id="floating-button">Информация</label>
+    <!-- Модальное окно -->
+    <div class="modal">
+    <input class="modal-open" id="modal-1" type="checkbox" hidden>
+    <div class="modal-wrap" aria-hidden="true" role="dialog">
+        <label class="modal-overlay" for="modal-1"></label>
+        <div class="modal-dialog">
+        <div class="modal-header">
+            <h2>Информация о программе</h2>
+            <label class="btn-close" for="modal-1" aria-hidden="true">×</label>
+        </div>
+        <div class="modal-body">
+            <p>Здесь можно разместить инфу, от том как работает прога и о разработчиках. Пока не придумал, что задесь написать😇😇😇</p>
+        </div>
+        <div class="modal-footer">
+            <label class="btn btn-primary close-modal-btn" for="modal-1">Закрыть</label>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../static/js/script.js"></script>
+    
+</body>
+</html>

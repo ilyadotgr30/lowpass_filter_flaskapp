@@ -1,0 +1,336 @@
+@font-face {
+    font-family: Raleway;
+    src: url(./fonts/Raleway-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Jost;
+    src: url(./fonts/Jost-VariableFont_wght.ttf);
+}
+* *, *:before, *:after  {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:focus {
+    outline: none;
+}
+
+h1 {
+    font-family: Jost;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 45px;
+}
+
+p, label{
+    font-family: Raleway;
+    color: #0d172a;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container {
+    padding: 30px;
+    width: 60%;
+    border-radius: 35px;
+    text-align: center;
+    box-shadow: -1px -1px 17px -1px rgba(115, 115, 115, 0.5);
+    margin-top: 45px;
+}
+
+#charts {
+    width: 90%;
+    text-align: center;
+}
+
+.select_form {
+    width: 50%;
+    border-radius: 35px;
+    height: 35px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #709dff;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    font-family: Raleway;
+    
+}
+.input_form {
+    width: 70%;
+    height: 45px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 2px solid#709dff;
+    font-family: Raleway;
+    font-size: 15px;
+}
+
+.input_form::-webkit-inner-spin-button, .input_form::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.select_form:hover {
+    border-color: #3a75f5;
+
+}
+.input_form:hover {
+    border-color: #3a75f5;
+ 
+}
+
+.select_form:focus {
+    border-color: #3a75f5;
+
+}
+.input_form:focus {
+    border-color: #3a75f5;
+    
+}
+
+.input_button {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  
+}
+
+.input_button:hover {
+  background-color: #709dff;
+  color: #fff;
+}
+
+#floating-button {
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    right: 20px;
+    background-color: #709dff;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Raleway;
+  }
+   
+  #floating-button:hover {
+    background-color: #9ab4fd;
+  }
+
+  .close-modal-btn {
+    background-color: #709dff;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Raleway;
+  }
+
+  .close-modal-btn {
+    background-color: #9ab4fd;
+  }
+
+@media (min-width: 768px) {
+.input_button {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Стили модального окна */
+.modal-header h2 {
+    color: #0d172a;  
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;    
+    margin: 0;
+}
+/* кнопка закрытия окна */
+.modal .btn-close {
+    color: #0d172a;
+    cursor: pointer;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.modal .btn-close:hover {
+    color: rgb(254, 87, 87)(243, 10, 10);
+}
+/* слой затемнения */
+.modal-wrap:before {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+}
+.modal-overlay {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 102;
+}
+/* активация слоя затемнения и модального блока */
+.modal-open:checked ~ .modal-wrap:before,
+.modal-open:checked ~ .modal-wrap .modal-overlay {
+    display: block;
+}
+.modal-open:checked ~ .modal-wrap .modal-dialog {
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    top: 20%;
+}
+/* элементы модального окна */
+.modal-dialog {
+    background: #fefefe;
+    border: none;
+    border-radius: 5px;
+    position: fixed;
+    width: 80%;
+    max-width: 500px;
+    left: 50%;
+    top: -100%;
+    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -webkit-transform: translate(-50%, -500%);
+    -ms-transform: translate(-50%, -500%);
+    -o-transform: translate(-50%, -500%);
+    transform: translate(-50%, -500%);
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    -moz-transition: -moz-transform 0.4s ease-out;
+    -o-transition: -o-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    z-index: 103;
+}
+.modal-body {
+  padding: 20px;
+}
+.modal-body p {
+    margin: 0;
+}
+.modal-header,
+.modal-footer {
+    padding: 20px 20px;
+}
+.modal-header {
+    border-bottom: #eaeaea solid 1px;
+}
+.modal-header h2 {
+    font-size: 20px;
+    margin: 0;
+}
+.modal-footer {
+    border-top: #eaeaea solid 1px;
+    text-align: right;
+}
+/* адаптивные картинки в модальном блоке */
+.modal-body img { 
+    max-width: 100%;
+    height: auto;
+}
+/* кнопки */
+.btn {
+    background: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 15px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 60px;
+    position: relative;
+}
+
+.btn-primary {
+    background-color: #709dff;
+    color: #fff;
+}
+.btn-primary:hover{
+    background: #9ab4fd;
+}
+
+.canvas-header{
+    text-align: center;
+    font-family: Raleway;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+
+
+/* SLIDER */
+.slider {
+    -webkit-appearance: none;
+    width: 70%;
+    height: 10px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #709dff;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #709dff;
+    cursor: pointer;
+}
