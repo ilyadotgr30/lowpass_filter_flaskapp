@@ -17,12 +17,21 @@
     outline: none;
 }
 
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+
+
 h1 {
     font-family: Jost;
     font-weight: 400;
     font-size: 40px;
     text-align: center;
-    margin-top: 45px;
+
 }
 
 p, label{
@@ -47,7 +56,7 @@ p, label{
     border-radius: 35px;
     text-align: center;
     box-shadow: -1px -1px 17px -1px rgba(115, 115, 115, 0.5);
-    margin-top: 45px;
+    margin-top: 25px;
 }
 
 #charts {

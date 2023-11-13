@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Симулятор фильтра низких частот</h1>
-    
+
+    <div class="header">
+        <span><img src="/static/img/favicon.png" width="70px"></span>
+        <h1>Симулятор фильтра низких частот</h1>
+    </div>
+
     <div class="flex-container">
     <div class="container">
     <form id="signal-form" action="/filter" method="POST">
@@ -69,7 +73,6 @@
         <h3 class="canvas-header">Сигнал после фильтрации</h3>
         <canvas id="filtered-signal-chart" width="400" height="200"></canvas>
     </div>
-    
     </div>
     <!-- Кнопка активации -->
     <label class="btn" for="modal-1" id="floating-button">Информация</label>
