@@ -22,38 +22,38 @@
             </select>
         </div>
         <div>
-            <p><span>Амплитуда</span></p>
+            <p class="input-label"><span>Амплитуда</span></p>
             <input type="number" placeholder="Амплитуда сигнала" name="amplitude" id="amplitude" step="0.01" class="input_form"><br>
             <div class="slidecontainer">
-                <input type="range" min="10" max="1000" value="500" class="slider" id="myRange">
+                <input type="range" min="1" max="1000" class="slider" id="myRange1">
             </div>
         </div>
         <div>
-            <p><span>Частота</span></p>
-            <input type="number" placeholder="Частота сигнала" name="frequency" id="frequency" step="0.01" class="input_form"><br>
+            <p class="input-label"><span>Частота</span></p>
+            <input type="number" placeholder="Частота сигнала (Гц)" name="frequency" id="frequency" step="0.01" class="input_form"><br>
             <div class="slidecontainer">
-                <input type="range" min="10" max="1000" value="500" class="slider" id="myRange">
+                <input type="range" min="1" max="500" class="slider" id="myRange2">
             </div>
         </div>
         <div>
-            <p><span>Амплитуда шума</span></p>
+            <p class="input-label"><span>Амплитуда шума</span></p>
             <input type="number" placeholder="Амплитуда шума" name="noise_amplitude" id="noise_amplitude" step="0.01"class="input_form"><br>
             <div class="slidecontainer">
-                <input type="range" min="10" max="1000" value="500" class="slider" id="myRange">
+                <input type="range" min="1" max="1000" class="slider" id="myRange3">
             </div>
         </div>
         <div>
-            <p><span>Частота среза фильтра</span></p>
-            <input type="number" placeholder="Частота среза фильтра" name="cutoff_frequency" id="cutoff_frequency" step="0.01" class="input_form"><br>
+            <p class="input-label"><span>Частота среза фильтра</span></p>
+            <input type="number" placeholder="Частота среза фильтра (Гц)" name="cutoff_frequency" id="cutoff_frequency" step="0.01" class="input_form"><br>
             <div class="slidecontainer">
-                <input type="range" min="10" max="1000" value="500" class="slider" id="myRange">
+                <input type="range" min="1" max="500" class="slider" id="myRange4">
             </div>
         </div>
         <div>
-            <p><span>Порядок фильтра</span></p>
+            <p class="input-label"><span>Порядок фильтра</span></p>
             <input type="number" placeholder="Порядок фильтра" name="filter_order" id="filter_order" step="1" class="input_form"><br>
             <div class="slidecontainer">
-                <input type="range" min="10" max="1000" value="500" class="slider" id="myRange">
+                <input type="range" min="1" max="50" class="slider" id="myRange5">
             </div>
         </div>
 
@@ -83,7 +83,9 @@
             <label class="btn-close" for="modal-1" aria-hidden="true">×</label>
         </div>
         <div class="modal-body">
-            <p>Здесь можно разместить инфу, от том как работает прога и о разработчиках. Пока не придумал, что задесь написать😇😇😇</p>
+            <p>Программа реализует симуляцию фильтра низких частот (фильтр Баттерворта). Она позволяет пользователю создавать сигнал различных форм (синусоидальный, квадратный, треугольный) с заданными параметрами, такими как амплитуда, частота и амплитуда шума.</p><br>
+            <p>Программа также позволяет пользователю задать характеристики фильтра низких частот, такие как частота среза и порядок фильтра, чтобы увидеть, как фильтр изменяет сигнал. После ввода параметров и запуска симуляции, программа строит два графика: исходного сигнала до фильтрации и отфильтрованного сигнала после применения фильтра.</p><br><br>
+            <p>Разработчики: Тарасов, Никитос и кто-то еще...</p>
         </div>
         <div class="modal-footer">
             <label class="btn btn-primary close-modal-btn" for="modal-1">Закрыть</label>

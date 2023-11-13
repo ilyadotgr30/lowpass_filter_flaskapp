@@ -1,25 +1,31 @@
 let signalChart, filteredSignalChart; // Объявим переменные для хранения графиков
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Находим слайдеры и поля ввода
+    var sliders = document.querySelectorAll('.slider');
+    var inputFields = document.querySelectorAll('.input_form');
 
-/* SLIDER
+    // Для каждого слайдера добавляем обработчик события при изменении значения
+    sliders.forEach(function (slider, index) {
+        slider.addEventListener('input', function () {
+            // При изменении значения слайдера, обновляем соответствующее поле ввода
+            inputFields[index].value = slider.value;
+        });
+    });
 
-var slider = document.getElementById("myRange");
-var output = document.getElementById("amplitude");
-output.innerHTML = slider.value; // Display the default slider value
+    // Для каждого поля ввода также добавляем обработчик изменения значения
+    inputFields.forEach(function (inputField, index) {
+        inputField.addEventListener('input', function () {
+            // При изменении значения поля ввода, обновляем соответствующий слайдер
+            sliders[index].value = inputField.value;
+        });
+    });
+});
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-    output.innerHTML = this.value;
-}
-*/
 
 document.getElementById('signal-form').addEventListener('submit', function(e) {
 e.preventDefault();
-
-
-
-
 
 // Получение значений из формы
 let signalType = document.getElementById('signal_type').value;

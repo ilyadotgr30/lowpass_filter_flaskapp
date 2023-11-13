@@ -30,6 +30,11 @@ p, label{
     color: #0d172a;
 }
 
+.input-label {
+    margin-top: 20px;
+}
+
+
 .flex-container {
     display: flex;
     justify-content: center;
