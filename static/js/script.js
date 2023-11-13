@@ -78,7 +78,7 @@ signalChart = new Chart(document.getElementById('signal-chart').getContext('2d')
         datasets: [{
             label: 'Сигнал с шумом',
             data: noisySignalData,
-            borderColor: 'rgba(75, 192, 192, 1)',
+            borderColor: 'rgba(255, 99, 132, 1)',
             borderWidth: 1,
             fill: false
         }]
@@ -98,7 +98,7 @@ filteredSignalChart = new Chart(document.getElementById('filtered-signal-chart')
         datasets: [{
             label: 'Сигнал после фильтрации',
             data: filteredSignalData,
-            borderColor: 'rgba(255, 99, 132, 1)',
+            borderColor: 'rgba(88, 139, 250, 0.8)',
             borderWidth: 1,
             fill: false
         }]

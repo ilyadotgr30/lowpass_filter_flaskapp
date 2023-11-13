@@ -53,6 +53,7 @@ p, label{
 #charts {
     width: 90%;
     text-align: center;
+    margin-bottom: 45px;
 }
 
 .select_form {
@@ -102,6 +103,7 @@ p, label{
 }
 
 .input_button {
+  margin-top: 10px;
   background-color: #fff;
   border: 0 solid #e2e8f0;
   border-radius: 1.5rem;
@@ -122,6 +124,7 @@ p, label{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  
   
 }
 
